@@ -46,7 +46,30 @@ class parameters:
         self.path = '../../../results/kedm/python3/'
 ```
 Let us now briefly explain each parameter (for more information, please read [KEDM-ICASSP19](https://github.com/swing-research/kedm-pubs/tree/master/icassp)).
-- `self.N`: 
+- `self.N`: Number of moving point,
+- `self.d`: Embedding dimension of trajectories,
+- `self.P`: Degree of polynomial model,
+- `self.omega`: Base frequency of bandlimited trajectories. No need to change for polynomial model;
+- `self.mode`: `1` for polynomial and `2` for bandlimited model,
+- `self.T_trn`: Train interval, where we can sample measurements,
+- `self.T_tst`: Test interval, where we estimate estimation error,
+- `self.N_trn`: Number of temporal samples, denoted by `T` in the paper,
+- `self.K`: Number of basis Gramians, `2P+1` for polynomial and `4P+1` for bandlimited model,
+- `self.N_tst`: Number of test samples to approximate estimation error `e_X`,
+- `self.Nr`: Number of time samples for positive semidefinite constraing `G(t_i) >> 0`,
+
+- `self.n_del`: Number of time samples for positive semidefinite constraing `G(t_i) >> 0`,
+- `self.sampling`: Number of time samples for positive semidefinite constraing `G(t_i) >> 0`,
+- `self.delta`: Number of time samples for positive semidefinite constraing `G(t_i) >> 0`,
+- `self.std`: Number of time samples for positive semidefinite constraing `G(t_i) >> 0`,
+- `self.maxIter`: Number of time samples for positive semidefinite constraing `G(t_i) >> 0`,
+- `self.n_del_init`: Number of time samples for positive semidefinite constraing `G(t_i) >> 0`,
+- `self.bipartite`: Number of time samples for positive semidefinite constraing `G(t_i) >> 0`,
+- `self.N0`: Number of time samples for positive semidefinite constraing `G(t_i) >> 0`,
+- `self.Pr`: Number of time samples for positive semidefinite constraing `G(t_i) >> 0`,
+- `self.path`: Number of time samples for positive semidefinite constraing `G(t_i) >> 0`,
+
+
 
 ## SubNet, DirectNet
 
