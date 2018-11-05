@@ -1,7 +1,6 @@
-# Deepmesh
-Repository for 'Deep Mesh Projectors for Inverse Problems'
+# KEDM
 
-We intend to make it as simple as possible to reproduce our results. If something is missing or you would like some guidance, please reach out to us.
+This repository provides the source codes to regenerate the results provided in "On the move: Localization with Kinetic Euclidean Distance Matrices" paper, submitted to ICASSP2019.
 
 ## Summary
 - In this work, we come up with a learning scheme to regularize ill-posed inverse problems. Instead of learning to go from measurements to the model directly, we learn to estimate certain random projections of the model. Specifically, we estimate projections on many random Delaunay triangulations of the model. Later, we combine them using regularized iterative schemes.
