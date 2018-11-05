@@ -84,7 +84,8 @@ You can regenerate the noisy measurement experiment with running the script `ske
 - `fig_name` specifies the name of the produced figure,
 - `A = ktools.randomAs(param)` generates random coefficients for a trajectory we wish to study.
 - `eDi, eDo` are relative measured and estimated distance errors, and `eX` is the relative trajectory mismatch.
-and `kedm.Save(param, kedm_output, trj_output, '100')` saves the results.
+
+The function `kedm.Save(param, kedm_output, trj_output, '100')` saves the results.
 
 ## Missing distance measurements experiment
 
