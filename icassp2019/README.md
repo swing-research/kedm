@@ -8,18 +8,6 @@ We regenerate the following simulations:
 - Noisy measurement experiment: sketch_experiment.py
 - Missingdistancemeasurements experiment: sparsity_experiment.py
 
-### Scheme
-We use neural network architectures inspired by U-nets. All networks are given a non-negative least squares reconstuction input from measurements. This is to *warm-start* the network as the network need not learn the mapping from measurement domain back to image domain.
-- **ProjNets**: These networks are trained to estimate projections on *one* random subspace from given input.
-- **SubNet**: This network estimates projections on *mutliple* random subspaces while still maintaining robustness inherent in ProjNets.
-- To reconstruct, once we know the estimated projections in these random low-dimensional subspaces we can build a linear system by concatenating the basis vectors of these low-dimensional subpsaces and solving the linear system.
-
-We compare our results with a system that is trained to map the same input to the model directly. We show that our method achieves:
-- Robustness to noise and arbitrary deviations from noise model
-- Robustness against dataset used for training 
-
-To see all the results, the scheme and the rationale explained in detail, please look at our [paper](https://arxiv.org/pdf/1805.11718.pdf).
-
 ## Getting started
 1. Prepare training data. 20,000 training images and four geo images are available here: https://uofi.app.box.com/v/deepmesh-data .
 2. Use python3 to generate meshes from utils/mesh_code.py . By default this code generates ten 128 x 128 meshes with 50 triangles. 
