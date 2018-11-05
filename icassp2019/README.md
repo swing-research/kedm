@@ -3,9 +3,10 @@
 This repository provides the source codes to regenerate the results provided in "On the move: Localization with Kinetic Euclidean Distance Matrices" paper, submitted to ICASSP2019.
 
 ## Summary
-- In this work, we come up with a learning scheme to regularize ill-posed inverse problems. Instead of learning to go from measurements to the model directly, we learn to estimate certain random projections of the model. Specifically, we estimate projections on many random Delaunay triangulations of the model. Later, we combine them using regularized iterative schemes.
-- As an example of very ill-posed inverse problem we choose the traveltime tomography problem, where a few sensors are placed on the image domain and line-integrals are calculated along lines connecting pairs of sensors. 
-- We want to be able to work in environments where data is extremely scarce. Hence, we train on standard datasets ([LSUN](https://arxiv.org/abs/1506.03365), [celebA](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) etc.) and test on arbitrary image patches from [BP2004](http://software.seg.org/datasets/2D/2004_BP_Vel_Benchmark/) velocity dataset. We show that our method does not try to *paint* dataset-specific structures, instead it captures the global shapes much more faithfully. We use the signal-to-noise ratio as a metric to quantify the quality of our reconstructions.
+We regenerate the following simulations:
+- Illustration of KEDM ambiguities: kedm_ambiguity.py
+- Noisy measurement experiment: sketch_experiment.py
+- Missingdistancemeasurements experiment: sparsity_experiment.py
 
 ### Scheme
 We use neural network architectures inspired by U-nets. All networks are given a non-negative least squares reconstuction input from measurements. This is to *warm-start* the network as the network need not learn the mapping from measurement domain back to image domain.
