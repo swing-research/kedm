@@ -38,10 +38,11 @@ if d > 3 or d < 2:
     print('There is something wrong, dude!')
 M = 300
 t = np.linspace(param.T_tst[0],param.T_tst[1],M)
+
 colors = np.random.rand(3,N)
 fig_name = 'kedm_ambiguity.pdf'
 fSize = 18
-A=ktools.randomAs(param)
+A = ktools.randomAs(param)
 
 B0 = np.random.randn(d,d)
 B1 = np.random.randn(d,d)

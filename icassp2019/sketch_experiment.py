@@ -33,8 +33,8 @@ param = parameters()
 ###########################################################################
 A = ktools.randomAs(param)
 colors = np.random.rand(3,param.N)
-figName = 'sketch.pdf'
-eDi, eDo, eX = kedm.SketchX(param, A, colors,figName)
+fig_name = 'sketch.pdf'
+eDi, eDo, eX = kedm.SketchX(param, A, colors,fig_name)
 np.save(param.path+'eDi',eDi)
 np.save(param.path+'eDo',eDo)
 np.save(param.path+'eX',eX)
