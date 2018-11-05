@@ -63,7 +63,7 @@ Let us now briefly explain each parameter (for more information, please read [KE
 - `self.std`: Standard deviation of measurement noise
 - `self.maxIter`: Maximum number of iterations
 - `self.n_del_init`: Number of initial missing measurements (only use for estimating sparsity level)
-- `self.bipartite`: Boolean parameter: `True` for bipartite and `False` for general measurement mask
+- `self.bipartite`: `True` for bipartite and `False` for general measurement mask
 - `self.N0`: Number of points in an independent set of a bipartite measurement mask
 - `self.Pr`: Probability of successful estimation
 - `self.path`: Save the results in this directory
