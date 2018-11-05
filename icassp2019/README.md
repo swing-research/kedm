@@ -70,22 +70,12 @@ Let us now briefly explain each parameter (for more information, please read [KE
 
 
 
-## SubNet, DirectNet
+## KEDM ambiguities
 
-The subspace network (SubNet), takes the basis for the random projection as an input along with the measurements. One can use `subnet/subnet.py` to train the subnet. `subnet.py` allows for resuming training from a particular checkpoint and also, skipping training and moving directly to evaluation on required datasets. We have a common parser for `subnet.py`, `directnet.py` and `reconstruct_from_subnet.py` as they share many same arguments. The parser arguments are as below::
-
-One must provide the `-dnpy` and `-mnpy` arguments which correspond to the data and the measurements numpy arrays. Along with that, a directory which has all the basis vectors must be provided via `-pdir` argument. Note that running the training does not require you to be in the subnet folder. 
-
-```console
-python3 subnet/subnet.py -niter 20000 -dnpy 'originals20k.npy' -mnpy 'custom25_10db.npy' -n test_subnet -e_orig [geo_originals.npy','geo_originals.npy'] -e_meas ['geo_pos_recon_10db.npy','geo_pos_recon_infdb.npy'] -e_name ['geo_tr0_t10','geo_tr0_tinf'] -pdir 'meshes/' -nproj 350 -ntri 50
-
-```
-
-To reconstruct from SubNet, one needs to run `reconstruct_from_subnet.py`. This file takes the coefficients calculated and the projections and runs an iterative projected least squares. Note that since we only train one network for all subspaces we need not use any extra regularization (like TV) to reconstruct the model. An example usage is given below:
-
-```console
-python3 subnet/subnet.py -lr 0.0005 -r_orig 'geo_originals.npy' -r_coef 'geo_tr10_tinf' -m 'mask.npy' -nproj 350 -ntri 50
-```
+The script ```kedm_ambiguity.py``` gives us an illustration that explain KEDM general distance ambiguities. There are few paramters to tweak.
+- `colors = np.random.rand(3,N)` specifies the colors of each trajectory,
+- `fig_name` specifies the name of the produced figure
+- `A = ktools.randomAs(param)` generates random coefficients for a trajectory we wish to study
 
 ## Direct inversion
 
