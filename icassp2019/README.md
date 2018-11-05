@@ -1,6 +1,6 @@
 # KEDM
 
-This repository provides the source codes to regenerate the results provided in "On the move: Localization with Kinetic Euclidean Distance Matrices" paper, submitted to ICASSP2019.
+This repository provides the source codes to reproduce the results provided in "On the move: Localization with Kinetic Euclidean Distance Matrices" paper, submitted to ICASSP2019.
 
 ## Summary
 We regenerate the following simulations:
