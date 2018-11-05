@@ -1,12 +1,12 @@
 # KEDM
 
-This repository provides the source codes to reproduce the results provided in "On the move: Localization with Kinetic Euclidean Distance Matrices" paper, submitted to ICASSP2019.
+This repository provides the source codes to reproduce the results presented in "On the move: Localization with Kinetic Euclidean Distance Matrices" paper, submitted to ICASSP2019.
 
 ## Summary
-We regenerate the following simulations:
-- Illustration of KEDM ambiguities: ```kedm_ambiguity.py```
-- Noisy measurement experiment: ```sketch_experiment.py```
-- Missing distance measurements experiment:```sparsity_experiment.py``` 
+This code regenerates the following simulations:
+- Illustration of KEDM ambiguities
+- Noisy measurement experiment
+- Missing distance measurements experiment
 
 ## Requirements
 This python code has been proved to work with the following installed.
