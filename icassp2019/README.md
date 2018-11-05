@@ -6,7 +6,7 @@ This repository provides the source codes to regenerate the results provided in 
 We regenerate the following simulations:
 - Illustration of KEDM ambiguities: kedm_ambiguity.py
 - Noisy measurement experiment: sketch_experiment.py
-- Missingdistancemeasurements experiment: sparsity_experiment.py
+- Missing distance measurements experiment: sparsity_experiment.py
 
 ## Requirements
 This python code has been proved to work with the following installed.
@@ -17,7 +17,7 @@ This python code has been proved to work with the following installed.
 
 ## Code
 
-### Training multiple ProjNets
+### KEDM Ambiguities
 To train multiple ProjNets, use ```projnet/train_projnets.py```.
 The arguments are as follows:
 ```console
