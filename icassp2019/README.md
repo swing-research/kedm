@@ -46,65 +46,11 @@ class parameters:
         self.path = '../../../results/kedm/python3/'
 ```
 Let us now briefly explain each parameter (for more information, please read [KEDM-ICASSP19](https://github.com/swing-research/kedm-pubs/tree/master/icassp)).
-- ```self.N```: 
+- `self.N`: 
 
 ## SubNet, DirectNet
 
 The subspace network (SubNet), takes the basis for the random projection as an input along with the measurements. One can use `subnet/subnet.py` to train the subnet. `subnet.py` allows for resuming training from a particular checkpoint and also, skipping training and moving directly to evaluation on required datasets. We have a common parser for `subnet.py`, `directnet.py` and `reconstruct_from_subnet.py` as they share many same arguments. The parser arguments are as below::
-
-```console
-usage: subnet.py [-h] [-ni NITER] [-dnpy DATA_ARRAY] [-mnpy MEASUREMENT_ARRAY]
-[-ntrain TRAINING_SAMPLES] [-t TRAIN] [-r_iter RESUME_FROM]
-[-n NAME] [-lr LEARNING_RATE] [-bs BATCH_SIZE]
-[-i_s IMG_SIZE] [-e EVAL] [-e_orig EVAL_ORIGINALS]
-[-e_meas EVAL_MEASUREMENTS] [-e_name EVAL_NAME]
-[-pdir PROJECTORS_DIR] [-nproj NUM_PROJECTORS_TO_USE]
-[-ntri DIM_RAND_SUBSPACE] [-r_orig RECON_ORIGINALS]
-[-r_coefs RECON_COEFFICIENTS] [-m MASK]
-
-optional arguments:
--h, --help            show this help message and exit
--ni NITER, --niter NITER
-Number of iterations fot the training to run
--dnpy DATA_ARRAY, --data_array DATA_ARRAY
-Numpy array of the data
--mnpy MEASUREMENT_ARRAY, --measurement_array MEASUREMENT_ARRAY
-Numpy array of the measurements
--ntrain TRAINING_SAMPLES, --training_samples TRAINING_SAMPLES
-Number of training samples
--t TRAIN, --train TRAIN
-Training flag
--r_iter RESUME_FROM, --resume_from RESUME_FROM
-resume training from r_iter checkpoint, if 0 start
-training afresh
--n NAME, --name NAME  Name of directory under results/ where the results of
-the current run will be stored
--lr LEARNING_RATE, --learning_rate LEARNING_RATE
-learning rate to be used for training
--bs BATCH_SIZE, --batch_size BATCH_SIZE
-mini-batch size
--i_s IMG_SIZE, --img_size IMG_SIZE
-image size
--e EVAL, --eval EVAL  Evaluation (on other dataset) flag
--e_orig EVAL_ORIGINALS, --eval_originals EVAL_ORIGINALS
-list of strings with names of original .npy arrays
--e_meas EVAL_MEASUREMENTS, --eval_measurements EVAL_MEASUREMENTS
-list of strings with names of measurement .npy arrays
--e_name EVAL_NAME, --eval_name EVAL_NAME
-Name to be given to the evaluation experiments
--pdir PROJECTORS_DIR, --projectors_dir PROJECTORS_DIR
-directory where all projector matrices are stored
--nproj NUM_PROJECTORS_TO_USE, --num_projectors_to_use NUM_PROJECTORS_TO_USE
-Number of projector matrices to use
--ntri DIM_RAND_SUBSPACE, --dim_rand_subspace DIM_RAND_SUBSPACE
-Number of triangles per mesh
--r_orig RECON_ORIGINALS, --recon_originals RECON_ORIGINALS
-npy array of originals to compare against
--r_coefs RECON_COEFFICIENTS, --recon_coefficients RECON_COEFFICIENTS
-npy array of coefficients to use
--m MASK, --mask MASK  Mask to apply for convex hull of sensors
-
-```
 
 One must provide the `-dnpy` and `-mnpy` arguments which correspond to the data and the measurements numpy arrays. Along with that, a directory which has all the basis vectors must be provided via `-pdir` argument. Note that running the training does not require you to be in the subnet folder. 
 
