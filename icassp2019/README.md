@@ -79,16 +79,14 @@ The script ```kedm_ambiguity.py``` gives us an illustration that explain KEDM ge
 
 ## Noisy measurement experiment
 
-The script ```sketch_experiment.py``` gives us an illustration that explain KEDM general distance ambiguities. There are few paramters to tweak.
+You can regenerate the noisy measurement experiment with running the script `sketch_experiment.py`. There are some exclusive paramters to choose:
 - `colors = np.random.rand(3,N)` specifies the colors of each trajectory,
 - `fig_name` specifies the name of the produced figure,
 - `A = ktools.randomAs(param)` generates random coefficients for a trajectory we wish to study.
-
+- `eDi, eDo` are relative measured and estimated distance errors, and `eX` is the relative trajectory mismatch.
+and `kedm.Save(param, kedm_output, trj_output, '100')` saves the results.
 ## Missing distance measurements experiment:
 
-The script ```sparsity_experiment.py```  gives us an illustration that explain KEDM general distance ambiguities. There are few paramters to tweak.
-- `colors = np.random.rand(3,N)` specifies the colors of each trajectory,
-- `fig_name` specifies the name of the produced figure,
-- `A = ktools.randomAs(param)` generates random coefficients for a trajectory we wish to study.
+The script `sparsity_experiment.py` simply estimates the maximum sparsity. The function `kedm.FindMaxSprs(param)` returns the maximum sparsity level ```S``` and `kedm.Save(param, kedm_output, trj_output, '100')` saves the results. Note that with `self.n_del_init` you can set the minimum sparsity level to be tested.
 
 
