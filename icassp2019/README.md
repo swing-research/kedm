@@ -48,49 +48,6 @@ class parameters:
 Let us now briefly explain each parameter (for more information, please read [KEDM-ICASSP19](https://github.com/swing-research/kedm-pubs/tree/master/icassp)).
 - ```self.N```: 
 
-## Reconstruct from trained ProjNets
-To reconstruct from trained Projnets, use ```projnet/reconstruct_from_projnets.py```. Total variation regularization is used for the reconstruction.
-The arguments are as follows:
-```console
-usage: reconstruct_from_projnets.py [-h] [--orig ORIG] [--input INPUT]
-[--nets NETS] [--lam LAM] [--nc]
-[--projnets PROJNETS] [--b B] [--c C]
-[--path PATH]
-
-optional arguments:
--h, --help            show this help message and exit
---orig ORIG, --originals ORIG
-Path to original images .npy
---input INPUT, --input INPUT
-Path to ProjNet input images .npy
---nets NETS, --networks NETS
-Number of ProjNets to use
---lam LAM, --lambda LAM
-TV regularization parameter
---nc, --nocoefs       Use if already calculated coefficients
---projnets PROJNETS, --projnetspath PROJNETS
-ProjNets directory.
---b B, --basisstacked B
-Path to save stacked basis functions .npy
---c C, --coefsstacked C
-Path to save stacked coefficients .npy
---path PATH, --reconpath PATH
-Reconstruction directory. Ensure this directory
-exists.
-```
-
-For example, to reconstruct from 40 networks in ```my_nets``` with a regularization parameter of 0.003 and store the reconstructions in ```reconstructions```, we can run the following:
-```console
-cd projnet/
-python3 reconstruct_from_projnets.py --nets=40 --projnets=my_nets --lam=0.003 --path=reconstructions --b=basis_40nets.npy --c=coefs_40nets.npy
-```
-
-The above command stores the stacked basis functions and stacked coefficients in ```basis.npy``` and ```coefs.npy```.
-It is possible that you may wish to try a different regularization parameter for reconstruction. 
-As you have saved the stacked basis functions and coefficients, you do not need to calculate these again. You can use the ```--nc``` option:
-```console
-python3 reconstruct_from_projnets.py --lam=0.002 --path=reconstructions_new_lam --b=basis_40nets.npy --c=coefs_40nets.npy --nc
-```
 ## SubNet, DirectNet
 
 The subspace network (SubNet), takes the basis for the random projection as an input along with the measurements. One can use `subnet/subnet.py` to train the subnet. `subnet.py` allows for resuming training from a particular checkpoint and also, skipping training and moving directly to evaluation on required datasets. We have a common parser for `subnet.py`, `directnet.py` and `reconstruct_from_subnet.py` as they share many same arguments. The parser arguments are as below::
