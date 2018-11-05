@@ -46,27 +46,27 @@ class parameters:
         self.path = '../../../results/kedm/python3/'
 ```
 Let us now briefly explain each parameter (for more information, please read [KEDM-ICASSP19](https://github.com/swing-research/kedm-pubs/tree/master/icassp)).
-- `self.N`: Number of moving point,
-- `self.d`: Embedding dimension of trajectories,
-- `self.P`: Degree of polynomial model,
-- `self.omega`: Base frequency of bandlimited trajectories. No need to change for polynomial model;
-- `self.mode`: `1` for polynomial and `2` for bandlimited model,
-- `self.T_trn`: Train interval, where we can sample measurements,
-- `self.T_tst`: Test interval, where we estimate estimation error,
-- `self.N_trn`: Number of temporal samples, denoted by `T` in the paper,
-- `self.K`: Number of basis Gramians, `2P+1` for polynomial and `4P+1` for bandlimited model,
-- `self.N_tst`: Number of test samples to approximate estimation error `e_X`,
-- `self.Nr`: Number of time samples for positive semidefinite constraing `G(t_i) >> 0`,
+- `self.N`: Number of moving point
+- `self.d`: Embedding dimension of trajectories
+- `self.P`: Degree of polynomial model
+- `self.omega`: Base frequency of bandlimited trajectories
+- `self.mode`: `1` for polynomial and `2` for bandlimited model
+- `self.T_trn`: Train interval, where we can sample measurements
+- `self.T_tst`: Test interval, where we estimate estimation error
+- `self.N_trn`: Number of temporal samples, denoted by `T` in the paper
+- `self.K`: Number of basis Gramians, `2P+1` for polynomial and `4P+1` for bandlimited model
+- `self.N_tst`: Number of test samples to approximate estimation error `e_X`
+- `self.Nr`: Number of time samples for positive semidefinite constraing `G(t_i) >> 0`
 - `self.n_del`: Number missing distances at a time,
-- `self.sampling`: Sampling protocol: `1` for equi-distance, `2` for Chebyshev and `3` for random,
-- `self.delta`: Successful estimation threshold,
-- `self.std`: Standard deviation of measurement noise,
-- `self.maxIter`: Maximum number of iterations,
-- `self.n_del_init`: Number of initial missing measurements (only use for estimating sparsity level),
+- `self.sampling`: Sampling protocol: `1` for equi-distance, `2` for Chebyshev and `3` for random
+- `self.delta`: Successful estimation threshold
+- `self.std`: Standard deviation of measurement noise
+- `self.maxIter`: Maximum number of iterations
+- `self.n_del_init`: Number of initial missing measurements (only use for estimating sparsity level)
 - `self.bipartite`: Boolean parameter: `True` for bipartite and `False` for general measurement mask
-- `self.N0`: Number of points in an independent set of a bipartite measurement mask,
-- `self.Pr`: Probability of successful estimation,
-- `self.path`: Save the results in this directory.
+- `self.N0`: Number of points in an independent set of a bipartite measurement mask
+- `self.Pr`: Probability of successful estimation
+- `self.path`: Save the results in this directory
 
 
 
