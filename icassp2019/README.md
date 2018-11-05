@@ -74,15 +74,21 @@ Let us now briefly explain each parameter (for more information, please read [KE
 
 The script ```kedm_ambiguity.py``` gives us an illustration that explain KEDM general distance ambiguities. There are few paramters to tweak.
 - `colors = np.random.rand(3,N)` specifies the colors of each trajectory,
-- `fig_name` specifies the name of the produced figure
-- `A = ktools.randomAs(param)` generates random coefficients for a trajectory we wish to study
+- `fig_name` specifies the name of the produced figure,
+- `A = ktools.randomAs(param)` generates random coefficients for a trajectory we wish to study.
 
-## Direct inversion
+## Noisy measurement experiment
 
-The direct net uses the same parser as subnet. An example usage is given below for reference:
+The script ```sketch_experiment.py``` gives us an illustration that explain KEDM general distance ambiguities. There are few paramters to tweak.
+- `colors = np.random.rand(3,N)` specifies the colors of each trajectory,
+- `fig_name` specifies the name of the produced figure,
+- `A = ktools.randomAs(param)` generates random coefficients for a trajectory we wish to study.
 
-```console
-python3 subnet/directnet.py -niter 20000 -dnpy 'originals20k.npy' -mnpy 'custom25_0db.npy' -n test_subnet -e_orig [geo_originals.npy','geo_originals.npy'] -e_meas ['geo_pos_recon_10db.npy','geo_pos_recon_infdb.npy'] -e_name ['geo_tr0_t10','geo_tr0_tinf']
+## Missing distance measurements experiment:
 
-```
+The script ```sparsity_experiment.py```  gives us an illustration that explain KEDM general distance ambiguities. There are few paramters to tweak.
+- `colors = np.random.rand(3,N)` specifies the colors of each trajectory,
+- `fig_name` specifies the name of the produced figure,
+- `A = ktools.randomAs(param)` generates random coefficients for a trajectory we wish to study.
+
 
