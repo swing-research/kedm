@@ -45,12 +45,8 @@ class parameters:
         self.Pr = 0.9
         self.path = '../../../results/kedm/python3/'
 ```
-
-For example, to train 50 ProjNets with 10,000 training images, 100 validation images and save them in ```my_nets``` (ensure this directory exists), we can run the following:
-``` console
-cd projnet/
-python3 train_projnets.py --nets=50 --imgs=10000 --val=10 --path='my_nets' --orig=../originals20k.npy --input=../custom25_infdb.npy
-```
+Let us now briefly explain each parameter (for more information, please read [KEDM-ICASSP19](https://github.com/swing-research/kedm-pubs/tree/master/icassp)).
+- ```self.N```: 
 
 ## Reconstruct from trained ProjNets
 To reconstruct from trained Projnets, use ```projnet/reconstruct_from_projnets.py```. Total variation regularization is used for the reconstruction.
