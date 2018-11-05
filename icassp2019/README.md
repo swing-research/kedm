@@ -8,10 +8,12 @@ We regenerate the following simulations:
 - Noisy measurement experiment: sketch_experiment.py
 - Missingdistancemeasurements experiment: sparsity_experiment.py
 
-## Getting started
-1. Prepare training data. 20,000 training images and four geo images are available here: https://uofi.app.box.com/v/deepmesh-data .
-2. Use python3 to generate meshes from utils/mesh_code.py . By default this code generates ten 128 x 128 meshes with 50 triangles. 
-In our paper we used 130 meshes to train 130 ProjNets and 350 meshes for SubNet.
+## Requirements
+This python code has been proved to work with the following installed.
+- cvxopt==1.2.2
+- cvxpy==1.0.10
+- numpy==1.15.4
+- python==3.7.0
 
 ## Code
 
