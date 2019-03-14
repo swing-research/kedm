@@ -10,7 +10,7 @@ class parameters:
     def __init__(self):
         self.N = 6
         self.d = 2
-        self.P = 0
+        self.P = 3
         self.omega = 2*np.pi
         self.mode = 1
         self.T_trn = np.array([-1, 1])
@@ -22,8 +22,8 @@ class parameters:
         self.n_del = 0
         self.sampling = 1
         self.delta = 0.99
-        self.std = 0
-        self.maxIter = 100
+        self.std = 1
+        self.maxIter = 5
         self.n_del_init = 0
         self.bipartite = False
         self.N0 = 3
@@ -31,9 +31,13 @@ class parameters:
         self.path = '../../../results/kedm/python3/'
 param = parameters()
 ###########################################################################
-param, S = kedm.FindMaxSprs(param)
-#np.save(param.path+'S',S)
-print('The maximum sparisty level is ', S)
+A = ktools.randomAs(param)
+colors = np.random.rand(3,param.N)
+fig_name = 'sketch.pdf'
+eDi, eDo, eX = kedm.SketchX(param, A, colors,fig_name)
+np.save(param.path+'eDi',eDi)
+np.save(param.path+'eDo',eDo)
+np.save(param.path+'eX',eX)
 ###########################################################################
-#kedm.Save(param, kedm_output, trj_output, '100')
+kedm.Save(param, kedm_output, trj_output, '100')
 ###########################################################################
